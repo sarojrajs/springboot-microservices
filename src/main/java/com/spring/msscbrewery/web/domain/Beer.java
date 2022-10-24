@@ -17,6 +17,7 @@ import java.util.UUID;
 @Entity
 public class Beer {
     @Id
+    @GeneratedValue
     @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
     private UUID id;
 
@@ -29,6 +30,7 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
+    private String beerName;
     private String beerStyle;
 
     @Column(unique = true)
